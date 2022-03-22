@@ -6,12 +6,29 @@ the list and checks that the current name is in the string passed in. The output
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords(){
-    //Your code goes here
-}
+function findWords(str, names){
+    for (let i = 0; i<names.length; i++){
+        if (str.includes(names[i])){
+            return 'Matched dog_name '
+        }
+    };
+    return 'No name matchrd.'
+};
+
+
+function findWords(str, names){
+    match = false;
+    for (let i = 0; i<names.length; i++){
+        if (str.includes(names[i])){
+            console.log('Matched dog_name ${names[i]}');
+            match = true;
+        }
+    };
+    ! match ? console.log('No name matchrd.') : null;
+};
 
 //Call method here with parameters
-
+console.log(findWords(dog_string, dog_names));
 
 //============Exercise #2 ============//
 /*Write a fucntion that takes in an array and removes every even index with a splice,
@@ -27,6 +44,13 @@ function replaceEvens(arr){
 }
 
 console.log(replaceEvens(["Max","Baseball","Reboot","Goku","Trucks","Rodger"]));
+
+// 2. yol 
+function replaceEvens(arr){
+    for(let i =0; i<arr.length; i+=2){
+            arr.splice(i, 1, 'even index');
+    }
+}
 
 
 //Expected output
